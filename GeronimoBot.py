@@ -11,10 +11,10 @@ import logging
 
 # STATICS
 TELEGRAM_API_TOKEN = '492982205:AAGsU3BSci1GV3OKaxcIyzDKGH5GY1Ciw1s'
-ON_START_MESSAGE = "Привет, Маш. Меня зовут Джеронимо. "
+ON_START_MESSAGE = "Привет, Маш. Меня зовут Джеронимо. Я хочу помочь тебе стать писательницей!"
 ON_HELP_MESSAGE = "Спроси у Жени \n https://t.me/TumanovEvgeny"
 ON_MESSAGE = "Пока что, я буду писать тебе в определенные часы. Я еще не умею поддерживать естественный диалог :)"
-NON_FAMILY_REPLY = "Я покамест являюсь закрытым ботом. Извините :)"
+NON_FAMILY_REPLY = "Я покамест являюсь закрытым ботом. Извините :)."
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
