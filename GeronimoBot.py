@@ -79,12 +79,16 @@ def message_from_cprovider_handler(bot, update):
     now = datetime.today()
     delta_t=target_time-now
     secs=delta_t.seconds+1
-    job = lambda bot, job:  BOT.send_message(chat_id=USERNAME_TO_CHAT_ID['TumanovEvgeny'], text=message_text)
+    
+    def scheduled_job(bot, job):
+        print("You reached the job")
+        BOT.send_message(chat_id=USERNAME_TO_CHAT_ID['TumanovEvgeny'], text=message_text)
+
     print('Setting the timer..')
     #t = Timer(secs, job)
     print('Setting the timer...')
     #t.start()
-    updater.job_queue.run_once(job, target_time)
+    updater.scheduled_job.run_once(job, target_time)
    
 # security_check will be called on parent function message_handler
 def message_from_creceiver_handler(bot, update):
