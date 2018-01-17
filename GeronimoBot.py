@@ -78,7 +78,9 @@ def message_from_cprovider_handler(bot, update):
         delta_t=target_time-now
         secs=delta_t.seconds+1
         job = lambda :  BOT.send_message(chat_id=USERNAME_TO_CHAT_ID['TumanovEvgeny'], text=message_text)
+        print('Setting the timer..')
         t = Timer(secs, job)
+        print('Setting the timer...')
         t.start()
     except:
         print("Got bad formated message")
