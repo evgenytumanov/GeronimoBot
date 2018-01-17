@@ -70,15 +70,18 @@ def message_handler(bot, update):
 
 # security_check will be called on parent function message_handler
 def message_from_cprovider_handler(bot, update):
-    timestamp, message_text = update.message.text.strip().split('|')
-    target_time = datetime.strptime(timestamp, '%Y-%m-%d %H:%M')
-    print(target_time)
-    now = datetime.today()
-    delta_t=target_time-now
-    secs=delta_t.seconds+1
-    job = lambda :  BOT.send_message(chat_id=USERNAME_TO_CHAT_ID['TumanovEvgeny'], text=message_text)
-    t = Timer(secs, job)
-    t.start()
+    try:
+        timestamp, message_text = update.message.text.strip().split('|')
+        target_time = datetime.strptime(timestamp, '%Y-%m-%d %H:%M')
+        print(target_time)
+        now = datetime.today()
+        delta_t=target_time-now
+        secs=delta_t.seconds+1
+        job = lambda :  BOT.send_message(chat_id=USERNAME_TO_CHAT_ID['TumanovEvgeny'], text=message_text)
+        t = Timer(secs, job)
+        t.start()
+    except:
+        print("Got bad formated message")
    
 # security_check will be called on parent function message_handler
 def message_from_creceiver_handler(bot, update):
