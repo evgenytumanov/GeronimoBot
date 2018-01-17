@@ -1,1 +1,1 @@
-web: python GeronimoBot.py
+worker: python GeronimoBot.py
