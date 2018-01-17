@@ -89,7 +89,7 @@ def message_from_cprovider_handler(bot, update):
     #t = Timer(secs, job)
     print('Setting the timer...')
     #t.start()
-    updater.scheduled_job.run_once(scheduled_job, target_time)
+    updater.job_queue.run_once(scheduled_job, target_time)
    
 # security_check will be called on parent function message_handler
 def message_from_creceiver_handler(bot, update):
